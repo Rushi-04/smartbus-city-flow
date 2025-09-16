@@ -73,7 +73,7 @@ export default {
         "2xl": "1.5rem",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
         'card': 'var(--shadow-card)',

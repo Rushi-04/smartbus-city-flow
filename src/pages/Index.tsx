@@ -4,6 +4,11 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import ImpactSection from "@/components/ImpactSection";
+import DemoSection from "@/components/DemoSection";
+import AdminDashboard from "@/components/AdminDashboard";
+import VehicleStatus from "@/components/VehicleStatus";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -15,7 +20,12 @@ const Index = () => {
         <SolutionSection />
         <FeaturesSection />
         <HowItWorksSection />
+        <ImpactSection />
+        <DemoSection />
+        <AdminDashboard />
+        <VehicleStatus />
       </main>
+      <Footer />
     </div>
   );
 };

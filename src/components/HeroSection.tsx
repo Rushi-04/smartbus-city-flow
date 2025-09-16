@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight } from "lucide-react";
+import { Smartphone, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -43,12 +43,12 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
         <div className="animate-fade-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="block">SmartBus</span>
-            <span className="block text-3xl md:text-5xl font-semibold text-white/90 mt-2">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+            <span className="block text-gradient-hero">SmartBus</span>
+            <span className="block text-4xl md:text-6xl font-bold text-white/95 mt-4">
               Real-Time Public Transport Tracking
             </span>
-            <span className="block text-xl md:text-2xl font-medium text-accent-green-light mt-3">
+            <span className="block text-2xl md:text-3xl font-semibold text-accent-green-light mt-4">
               for Small Cities
             </span>
           </h1>
@@ -61,14 +61,14 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className="animate-fade-up flex flex-col sm:flex-row gap-4 justify-center items-center" style={{ animationDelay: '0.4s' }}>
-          <Button className="btn-hero text-lg px-8 py-4 h-auto">
-            <Play className="mr-2 h-5 w-5" />
-            See Live Demo
+        <div className="animate-fade-up flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ animationDelay: '0.4s' }}>
+          <Button className="btn-hero text-xl px-10 py-5 h-auto hover:scale-105 transition-transform duration-300">
+            <Smartphone className="mr-3 h-6 w-6" />
+            Track My Bus
           </Button>
-          <Button className="btn-secondary-hero text-lg px-8 py-4 h-auto">
-            Dashboard for Authorities
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button className="btn-secondary-hero text-xl px-10 py-5 h-auto hover:scale-105 transition-transform duration-300">
+            See Dashboard
+            <ArrowRight className="ml-3 h-6 w-6" />
           </Button>
         </div>
 

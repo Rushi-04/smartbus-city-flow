@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Globe, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -23,8 +23,23 @@ const Header = () => {
     { label: language === "en" ? "Contact" : "संपर्क", href: "#contact" },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-background/80 backdrop-blur-lg border-b border-border/50">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/95 dark:bg-background/95 backdrop-blur-xl border-b border-border shadow-lg' 
+        : 'bg-white/80 dark:bg-background/80 backdrop-blur-lg border-b border-border/50'
+    }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -69,8 +84,8 @@ const Header = () => {
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button className="btn-hero">
-              {language === "en" ? "Try Demo" : "डेमो आज़माएं"}
+            <Button className="btn-hero hover:scale-105 transition-transform duration-300">
+              {language === "en" ? "Track My Bus" : "मेरी बस देखें"}
             </Button>
           </div>
 
@@ -107,7 +122,7 @@ const Header = () => {
                 </a>
               ))}
               <Button className="btn-hero mt-4">
-                {language === "en" ? "Try Demo" : "डेमो आज़माएं"}
+                {language === "en" ? "Track My Bus" : "मेरी बस देखें"}
               </Button>
             </nav>
           </div>

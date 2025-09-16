@@ -110,6 +110,11 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   /* Custom Animations */
@@ -209,7 +214,23 @@
 
   /* Card Styles */
   .card-elevated {
-    @apply bg-gradient-to-br from-card to-secondary rounded-2xl p-6 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border/50;
+    @apply bg-gradient-to-br from-card to-secondary rounded-2xl p-8 shadow-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border/50;
+  }
+
+  .card-feature {
+    @apply bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-border/50 group;
+  }
+
+  .card-status-green {
+    @apply bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-700 text-green-800 dark:text-green-200;
+  }
+
+  .card-status-yellow {
+    @apply bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 border-yellow-200 dark:border-yellow-700 text-yellow-800 dark:text-yellow-200;
+  }
+
+  .card-status-red {
+    @apply bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 border-red-200 dark:border-red-700 text-red-800 dark:text-red-200;
   }
 
   /* Text Gradients */
