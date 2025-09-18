@@ -277,7 +277,7 @@ const cities = [
             Live Transport Tracking
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            See SmartBus in action - real-time tracking across Indian cities with accurate ETAs and live updates
+            See TravelEase in action - real-time tracking across Indian cities with accurate ETAs and live updates
           </p>
         </div>
 

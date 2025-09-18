@@ -1,9 +1,9 @@
 // vite.config.ts
-import { defineConfig } from "file:///E:/Coding_Playground/SIH/Project-X/smartbus-city-flow/node_modules/vite/dist/node/index.js";
-import react from "file:///E:/Coding_Playground/SIH/Project-X/smartbus-city-flow/node_modules/@vitejs/plugin-react-swc/index.js";
+import { defineConfig } from "file:///E:/Coding_Playground/SIH/Project-X/TravelEase-city-flow/node_modules/vite/dist/node/index.js";
+import react from "file:///E:/Coding_Playground/SIH/Project-X/TravelEase-city-flow/node_modules/@vitejs/plugin-react-swc/index.js";
 import path from "path";
-import { componentTagger } from "file:///E:/Coding_Playground/SIH/Project-X/smartbus-city-flow/node_modules/lovable-tagger/dist/index.js";
-var __vite_injected_original_dirname = "E:\\Coding_Playground\\SIH\\Project-X\\smartbus-city-flow";
+import { componentTagger } from "file:///E:/Coding_Playground/SIH/Project-X/TravelEase-city-flow/node_modules/lovable-tagger/dist/index.js";
+var __vite_injected_original_dirname = "E:\\Coding_Playground\\SIH\\Project-X\\TravelEase-city-flow";
 var vite_config_default = defineConfig(({ mode }) => ({
   server: {
     host: "::",

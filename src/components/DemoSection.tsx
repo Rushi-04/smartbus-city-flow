@@ -12,7 +12,7 @@ const DemoSection = () => {
             Interactive Prototype
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience SmartBus in action with our live demo showcasing real-time tracking and predictive features
+            Experience TravelEase in action with our live demo showcasing real-time tracking and predictive features
           </p>
         </ScrollAnimation>
 

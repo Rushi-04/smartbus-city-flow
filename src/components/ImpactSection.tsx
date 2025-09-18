@@ -41,7 +41,7 @@ const ImpactSection = () => {
             Transforming Urban Mobility
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real-world impact of SmartBus implementation in small cities across India
+            Real-world impact of TravelEase implementation in small cities across India
           </p>
         </ScrollAnimation>
 
@@ -81,7 +81,7 @@ const ImpactSection = () => {
         <ScrollAnimation delay={0.8} className="mt-20">
           <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50 max-w-5xl mx-auto">
             <h3 className="text-3xl font-bold text-center text-foreground mb-12">
-              Before vs After SmartBus
+              Before vs After TravelEase
             </h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -89,7 +89,7 @@ const ImpactSection = () => {
               <div className="space-y-4">
                 <h4 className="text-xl font-semibold text-red-600 dark:text-red-400 mb-4 flex items-center gap-2">
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  Without SmartBus
+                  Without TravelEase
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
@@ -119,7 +119,7 @@ const ImpactSection = () => {
               <div className="space-y-4">
                 <h4 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4 flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  With SmartBus
+                  With TravelEase
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-muted-foreground">
