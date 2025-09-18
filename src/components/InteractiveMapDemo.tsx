@@ -245,7 +245,7 @@ const cities = [
 
     const animate = () => {
       if (isPlaying) {
-        setBusPosition(prev => (prev + 0.0004) % 1);
+        setBusPosition(prev => (prev + 0.00001) % 1);
       }
       drawMap(ctx, busPosition);
       animationRef.current = requestAnimationFrame(animate);
