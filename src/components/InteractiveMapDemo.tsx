@@ -350,7 +350,7 @@ const cities = [
           {/* Route Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
             <div className="text-center p-4 bg-primary/5 rounded-xl">
-              <div className="text-2xl font-bold text-primary mb-1">186 km</div>
+              <div className="text-2xl font-bold text-primary mb-1">289 km</div>
               <div className="text-sm text-muted-foreground">Route Distance</div>
             </div>
             <div className="text-center p-4 bg-accent-green/5 rounded-xl">
@@ -358,11 +358,11 @@ const cities = [
               <div className="text-sm text-muted-foreground">Journey Time</div>
             </div>
             <div className="text-center p-4 bg-orange-500/5 rounded-xl">
-              <div className="text-2xl font-bold text-orange-600 mb-1">12</div>
+              <div className="text-2xl font-bold text-orange-600 mb-1">9</div>
               <div className="text-sm text-muted-foreground">Bus Stops</div>
             </div>
             <div className="text-center p-4 bg-purple-500/5 rounded-xl">
-              <div className="text-2xl font-bold text-purple-600 mb-1">₹180</div>
+              <div className="text-2xl font-bold text-purple-600 mb-1">₹270</div>
               <div className="text-sm text-muted-foreground">Ticket Price</div>
             </div>
           </div>
