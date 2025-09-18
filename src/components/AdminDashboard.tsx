@@ -35,8 +35,8 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-br from-background to-muted/30">
+      <div className="container mx-auto px-6">
         <ScrollAnimation className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Administrative Dashboard

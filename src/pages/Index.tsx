@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import InteractiveMapDemo from "@/components/InteractiveMapDemo";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -16,14 +17,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        {/* <ProblemSection /> */}
+        <InteractiveMapDemo />
         <SolutionSection />
         <FeaturesSection />
         <HowItWorksSection />
         <ImpactSection />
-        <DemoSection />
         <AdminDashboard />
         <VehicleStatus />
+        <DemoSection />
       </main>
       <Footer />
     </div>

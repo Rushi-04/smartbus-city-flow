@@ -43,8 +43,8 @@ const HowItWorksSection = () => {
   }, []);
 
   return (
-    <section id="how-it-works" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="how-it-works" className="py-24 bg-background">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
             How It Works
