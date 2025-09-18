@@ -9,28 +9,28 @@ const HowItWorksSection = () => {
       number: "01",
       title: "Bus Shares GPS Location",
       description: "GPS devices installed in buses continuously share location data via low-bandwidth connection",
-      icon: "🚌",
+      icon: "",
       details: ["Real-time GPS tracking", "2G/3G connectivity", "Battery-efficient devices"]
     },
     {
       number: "02",
       title: "Data Processed in Cloud",
       description: "Our intelligent cloud system processes location data and calculates ETAs using AI algorithms",
-      icon: "☁️",
+      icon: "",
       details: ["AI-powered predictions", "Traffic pattern analysis", "Route optimization"]
     },
     {
       number: "03",
       title: "ETA Shown on Apps & Web App",
       description: "Commuters receive real-time updates on mobile apps and digital display boards at bus stops",
-      icon: "📱",
+      icon: "",
       details: ["Multi-platform access", "Push notifications", "Digital signage integration"]
     },
     {
       number: "04",
       title: "Authorities View Analytics",
       description: "Transport authorities access comprehensive dashboards with insights for route optimization",
-      icon: "📊",
+      icon: "",
       details: ["Performance metrics", "Passenger flow analysis", "Operational insights"]
     }
   ];
