@@ -13,7 +13,7 @@ const HowItWorksSection = () => {
       details: ["Real-time GPS tracking", "2G/3G connectivity", "Battery-efficient devices"]
     },
     {
-      number: "02", 
+      number: "02",
       title: "Data Processed in Cloud",
       description: "Our intelligent cloud system processes location data and calculates ETAs using AI algorithms",
       icon: "☁️",
@@ -21,7 +21,7 @@ const HowItWorksSection = () => {
     },
     {
       number: "03",
-      title: "ETA Shown on Apps & Displays", 
+      title: "ETA Shown on Apps & Web App",
       description: "Commuters receive real-time updates on mobile apps and digital display boards at bus stops",
       icon: "📱",
       details: ["Multi-platform access", "Push notifications", "Digital signage integration"]
@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
       number: "04",
       title: "Authorities View Analytics",
       description: "Transport authorities access comprehensive dashboards with insights for route optimization",
-      icon: "📊", 
+      icon: "📊",
       details: ["Performance metrics", "Passenger flow analysis", "Operational insights"]
     }
   ];
@@ -38,13 +38,14 @@ const HowItWorksSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 4000);
+    }, 5000); // smoother, slower cycle
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section id="how-it-works" className="py-24 bg-background">
       <div className="container mx-auto px-6">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
             How It Works
@@ -56,35 +57,40 @@ const HowItWorksSection = () => {
 
         {/* Timeline Flow */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Connection Line */}
-          <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-primary hidden lg:block">
-            <div 
-              className="h-full bg-accent-green transition-all duration-1000 ease-out"
+          {/* Connection Line (Desktop only) */}
+          <div className="absolute top-[4.5rem] left-0 right-0 h-1 bg-gradient-primary hidden lg:block">
+            <div
+              className="h-full bg-accent-green transition-all duration-700 ease-out"
               style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
             ></div>
           </div>
 
           {/* Steps */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
             {steps.map((step, index) => (
-              <div 
+              <div
                 key={index}
+                aria-label={`Step ${index + 1}: ${step.title}`}
                 className={`relative group cursor-pointer transition-all duration-500 ${
-                  index <= activeStep ? 'scale-105' : 'scale-95 opacity-70'
+                  index === activeStep
+                    ? "scale-105 shadow-xl"
+                    : "scale-95 opacity-80"
                 }`}
                 onClick={() => setActiveStep(index)}
               >
                 {/* Step Number */}
-                <div className={`w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg transition-all duration-500 ${
-                  index <= activeStep 
-                    ? 'bg-gradient-primary shadow-primary' 
-                    : 'bg-muted-foreground'
-                }`}>
+                <div
+                  className={`w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg transition-all duration-500 ${
+                    index <= activeStep
+                      ? "bg-gradient-primary shadow-primary"
+                      : "bg-muted-foreground"
+                  }`}
+                >
                   {step.number}
                 </div>
 
-                {/* Step Content */}
-                <div className="card-elevated text-center min-h-[300px] flex flex-col">
+                {/* Step Card */}
+                <div className="card-elevated text-center min-h-[320px] p-6 flex flex-col hover:shadow-lg transition">
                   <div className="text-4xl mb-4">{step.icon}</div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">
                     {step.title}
@@ -92,61 +98,38 @@ const HowItWorksSection = () => {
                   <p className="text-muted-foreground mb-6 flex-grow">
                     {step.description}
                   </p>
-                  
+
                   {/* Step Details */}
                   <div className="space-y-2">
                     {step.details.map((detail, detailIndex) => (
-                      <div key={detailIndex} className="flex items-center justify-center">
+                      <div
+                        key={detailIndex}
+                        className="flex items-center justify-center"
+                      >
                         <div className="w-1.5 h-1.5 bg-accent-green rounded-full mr-2"></div>
-                        <span className="text-xs text-muted-foreground">{detail}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {detail}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Arrow (hidden on mobile, last item) */}
+                {/* Arrow (only desktop, skip last step) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-20 -right-4 z-10">
-                    <ArrowRight className={`h-6 w-6 transition-colors duration-500 ${
-                      index < activeStep ? 'text-accent-green' : 'text-muted-foreground'
-                    }`} />
+                  <div className="hidden lg:block absolute top-[4.5rem] -right-6 z-10">
+                    <ArrowRight
+                      className={`h-6 w-6 transition-colors duration-500 ${
+                        index < activeStep
+                          ? "text-accent-green"
+                          : "text-muted-foreground"
+                      }`}
+                    />
                   </div>
                 )}
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Process Animation */}
-        <div className="mt-16 bg-gradient-hero rounded-3xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-6">Real-time Data Flow</h3>
-          <div className="flex items-center justify-center space-x-8 text-4xl">
-            <div className="animate-float">🚌</div>
-            <div className="text-white/60">→</div>
-            <div className="animate-float" style={{ animationDelay: '1s' }}>☁️</div>
-            <div className="text-white/60">→</div>
-            <div className="animate-float" style={{ animationDelay: '2s' }}>📱</div>
-            <div className="text-white/60">→</div>
-            <div className="animate-float" style={{ animationDelay: '3s' }}>📊</div>
-          </div>
-          <p className="text-white/80 mt-4">
-            Seamless integration from vehicle to user to authority dashboard
-          </p>
-        </div>
-
-        {/* Interactive Controls */}
-        <div className="flex justify-center space-x-2 mt-8">
-          {steps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveStep(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === activeStep 
-                  ? 'bg-primary scale-125' 
-                  : 'bg-muted-foreground hover:bg-muted-foreground/80'
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>

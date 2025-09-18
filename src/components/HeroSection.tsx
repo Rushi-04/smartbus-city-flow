@@ -4,12 +4,12 @@ import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex mt-7 items-center justify-center overflow-hidden ">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Smart city with public transport" 
+        <img
+          src={heroImage}
+          alt="Smart city with public transport"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-accent-green/90"></div>
@@ -44,8 +44,8 @@ const HeroSection = () => {
       <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
         <div className="animate-fade-up">
           <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="block text-white ">SmartBus</span>
-            <span className="block text-4xl md:text-6xl font-bold text-white/95 mt-4">
+            <span className="block text-gradient">TravelEase</span>
+            <span className="block text-4xl md:text-4xl font-bold text-white/95 mt-4">
               Real-Time Public Transport Tracking
             </span>
             <span className="block text-2xl md:text-3xl font-semibold text-accent-green-light mt-4">
@@ -55,18 +55,18 @@ const HeroSection = () => {
         </div>
 
         <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Reliable, Low-Bandwidth, Real-time Transport Tracking—no more waiting or guessing, 
+          <p className="text-xl md:text-xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Reliable, Low-Bandwidth, Real-time Transport Tracking—no more waiting or guessing,
             just smarter, stress-free journeys.
           </p>
         </div>
 
         <div className="animate-fade-up flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ animationDelay: '0.4s' }}>
-          <Button className="btn-hero text-xl px-10 py-5 h-auto hover:scale-105 transition-transform duration-300">
+          <Button size="lg" className="h-14 px-8 text-xl">
             <Smartphone className="mr-3 h-6 w-6" />
             Track My Bus
           </Button>
-          <Button className="btn-secondary-hero text-xl px-10 py-5 h-auto hover:scale-105 transition-transform duration-300">
+          <Button variant="outline" size="lg" className="h-14 px-8 text-xl bg-white/10 text-white border-white hover:bg-white/20">
             See Dashboard
             <ArrowRight className="ml-3 h-6 w-6" />
           </Button>

@@ -9,40 +9,45 @@ const InteractiveMapDemo = () => {
   const animationRef = useRef<number>();
 
   // Indian cities with realistic coordinates
-  const cities = [
-    { name: 'Shegaon', x: 200, y: 180, label: 'शेगाव' },
-    { name: 'Nagpur', x: 400, y: 200, label: 'नागपुर' },
-    { name: 'Pune', x: 300, y: 350, label: 'पुणे' },
-    { name: 'Bengaluru', x: 500, y: 450, label: 'बेंगलुरु' }
-  ];
+  
+// Bus routes between cities (Shegaon → Nagpur with proper spacing)
+const routes = [
+  {
+    name: 'Shegaon - Nagpur Express',
+    path: [
+      { x: 150, y: 200 }, // Shegaon
+      { x: 220, y: 150 }, // Akola
+      { x: 300, y: 265 }, // Karanja
+      { x: 500, y: 320 }, // Wardha
+      { x: 670, y: 270 }, // Butibori
+      { x: 800, y: 130 }  // Nagpur
+    ],
+    color: '#3b82f6',
+    active: true
+  },
+  {
+    name: 'Nagpur - Pune Highway',
+    path: [
+       // Pune
+    ],
+    color: '',
+    active: false
+  }
+];
 
-  // Bus routes between cities
-  const routes = [
-    {
-      name: 'Shegaon - Nagpur Express',
-      path: [
-        { x: 200, y: 180 },
-        { x: 250, y: 175 },
-        { x: 300, y: 185 },
-        { x: 350, y: 190 },
-        { x: 400, y: 200 }
-      ],
-      color: '#3b82f6',
-      active: true
-    },
-    {
-      name: 'Nagpur - Pune Highway',
-      path: [
-        { x: 400, y: 200 },
-        { x: 380, y: 250 },
-        { x: 350, y: 300 },
-        { x: 320, y: 330 },
-        { x: 300, y: 350 }
-      ],
-      color: '#10b981',
-      active: false
-    }
-  ];
+// Indian cities with realistic spacing
+const cities = [
+  { name: 'Shegaon', x: 150, y: 200, label: 'शेगाव' },
+  { name: 'Akola', x: 220, y: 150, label: 'अकोला' },
+  { name: 'Karanja', x: 300, y: 265, label: 'करंजा' },
+  { name: 'Wardha', x: 500, y: 320, label: 'वर्धा' },
+  { name: 'Butibori', x: 670, y: 270, label: 'बुटीबोरी' },
+  { name: 'Nagpur', x: 800, y: 130, label: 'नागपुर' },
+  { name: 'Pune', x: 300, y: 420, label: 'पुणे' },
+  { name: 'Bengaluru', x: 500, y: 480, label: 'बेंगलुरु' }
+];
+
+
 
   const drawMap = (ctx: CanvasRenderingContext2D, position: number) => {
     const canvas = ctx.canvas;
@@ -240,7 +245,7 @@ const InteractiveMapDemo = () => {
 
     const animate = () => {
       if (isPlaying) {
-        setBusPosition(prev => (prev + 0.003) % 1);
+        setBusPosition(prev => (prev + 0.001) % 1);
       }
       drawMap(ctx, busPosition);
       animationRef.current = requestAnimationFrame(animate);
